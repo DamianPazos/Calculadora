@@ -30,7 +30,7 @@ class Interfaz:
         boton_0 = self.crearBoton(0)
         boton_suma = self.crearBoton('+')
         boton_resta = self.crearBoton('-')
-        boton_multiplicacion = self.crearBoton('x')
+        boton_multiplicacion = self.crearBoton('*')
         boton_division = self.crearBoton('/')
         boton_igual = self.crearBoton('=',escribir=False)
         boton_decimal = self.crearBoton('.')
@@ -38,12 +38,14 @@ class Interfaz:
         
         # Ubicacion de Botones
         
-        botones = [boton_0,boton_1,boton_2,boton_3,boton_4,boton_5,boton_6,boton_7,boton_8,boton_9,boton_suma,boton_resta,boton_multiplicacion,boton_division,boton_igual,boton_decimal,boton_borrar]
+        botones = [boton_1,boton_2,boton_3,boton_suma,boton_4,boton_5,boton_6,boton_resta,boton_7,boton_8,boton_9,boton_multiplicacion,boton_0,boton_decimal,boton_igual,boton_division,boton_borrar]
         contador = 0
         for fila in range(1,5):
             for columna in range (4):
                 botones[contador].grid(row=fila,column=columna)
                 contador +=1
+                
+        botones[-1].grid(row=5,column=1)
                 
     def crearBoton(self,valor,escribir=True,ancho=9,alto=1):
         return Button(self.ventana,text=valor,width=ancho,height=alto,font=('Arial',15),command=lambda:self.click(valor,escribir))
@@ -79,10 +81,6 @@ class Interfaz:
 root = Tk()
 calculadora = Interfaz(root)
 root.mainloop()
-
-
-
-
 
 
 #Funcion para la suma
