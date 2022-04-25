@@ -14,6 +14,10 @@ def multiplicar(a,b):
 def division(a,b):
     total = a / b
     return total
+# Funcion para ingreso de un numero
+def ingreso_numero():
+    numero = float(input('Ingrese el valor: '))
+    return numero
 # Iniciamos una bandera para el menu
 bandera_menu = True
 # Iniciamos el menu
@@ -28,26 +32,26 @@ while (bandera_menu):
     
     # Opcion N°1: Suma
     if (opcion_menu == "1"):
-        numero_a = float(input('Ingrese el primer valor a sumar: '))
-        numero_b = float(input('Ingrese el segundo valor a sumar: '))
+        numero_a = ingreso_numero()
+        numero_b = ingreso_numero()
         numero_total = suma(numero_a,numero_b)
         print(f'La suma es {numero_total}')
     # Opcion N°2: Resta
     elif (opcion_menu == "2"):
-        numero_a = float(input('Ingrese el primer valor a restar: '))
-        numero_b = float(input('Ingrese el segundo valor a restar: '))
+        numero_a = ingreso_numero()
+        numero_b = ingreso_numero()
         numero_total = resta(numero_a,numero_b)
         print(f'La resta es {numero_total}')
     # Opcion N°3: Multiplicacion
     elif (opcion_menu == "3"):
-        numero_a = float(input('Ingrese el primer valor a multiplicar: '))
-        numero_b = float(input('Ingrese el segundo valor a multiplicar: '))
+        numero_a = ingreso_numero()
+        numero_b = ingreso_numero()
         numero_total = multiplicar(numero_a,numero_b)
         print(f'La multiplicacion es {numero_total}')
     # Opcion N°4: Division
     elif (opcion_menu == "4"):
-        numero_a = float(input('Ingrese el primer valor a dividir: '))
-        numero_b = float(input('Ingrese el segundo valor a dividir: '))
+        numero_a = ingreso_numero()
+        numero_b = ingreso_numero()
         numero_total = division(numero_a,numero_b)
         print(f'La division es {numero_total}')
     elif (opcion_menu == "5"):
