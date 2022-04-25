@@ -1,5 +1,32 @@
-import matplotlib
-print(matplotlib.__version__)
+from re import T
+import matplotlib.pyplot as plt
+import numpy as np
+from tkinter import Tk, Text
+
+class Interfaz:
+    def __init__(self,ventana):
+        # Inicializo la ventana con su nombre
+        self.ventana = ventana
+        self.ventana.title('Calculadora')
+        
+        # Pantalla de la calculadora
+        self.pantalla = Text(ventana,state='disabled',width='30',height='5', background='light cyan',foreground='black',font=('Arial',17))
+        
+        # Ubicar la pantalla en la ventana
+        self.pantalla.grid(row=0,column=0,columnspan=4,padx=5,pady=5)
+        
+        #Inicializar la operacion mostrada en pantalla como un string vacio
+        self.operacion =''
+        
+root = Tk()
+calculadora = Interfaz(root)
+root.mainloop()
+
+
+
+
+
+
 #Funcion para la suma
 def suma(a,b):
     total = a + b
