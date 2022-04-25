@@ -1,3 +1,5 @@
+import matplotlib
+print(matplotlib.__version__)
 #Funcion para la suma
 def suma(a,b):
     total = a + b
