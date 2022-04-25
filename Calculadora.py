@@ -1,22 +1,22 @@
-# Iniciamos el menu
+#Funcion para la suma
 def suma(a,b):
     total = a + b
     return total
-
+# Funcion para la resta
 def resta(a,b):
     total = a - b
     return total
-
+# Funcion para la multiplicacion
 def multiplicar(a,b):
     total = a * b
     return total
-
+# Funcion para la division
 def division(a,b):
     total = a / b
     return total
-
+# Iniciamos una bandera para el menu
 bandera_menu = True
-
+# Iniciamos el menu
 while (bandera_menu):
     print("Elige la opcion desesada: ")
     print("1. Suma")
