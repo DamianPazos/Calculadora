@@ -74,11 +74,11 @@ class Interfaz:
         self.pantalla.configure(state='disabled')
         return
     
-    # Mostrar pantalla
-    def mostrarEnPantalla(self, valor):
+    # Limpieza de pantalla
+    def limpiarPantalla(self):
         self.pantalla.configure(state='normal')
-        self.pantalla.insert(END,valor)
-        self.pantalla.configure(state='disable')
+        self.pantalla.delete('1.0',END)
+        self.pantalla.configure(state='disabled')
         return
     
 root = Tk()
