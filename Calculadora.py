@@ -35,9 +35,8 @@ class Interfaz:
         boton_igual = self.crearBoton('=',escribir=False)
         boton_decimal = self.crearBoton('.')
         boton_borrar = self.crearBoton('C',escribir=False)
-        
+
         # Ubicacion de Botones
-        
         botones = [boton_1,boton_2,boton_3,boton_suma,boton_4,boton_5,boton_6,boton_resta,boton_7,boton_8,boton_9,boton_multiplicacion,boton_0,boton_decimal,boton_igual,boton_division,boton_borrar]
         contador = 0
         for fila in range(1,5):
@@ -46,10 +45,12 @@ class Interfaz:
                 contador +=1
                 
         botones[-1].grid(row=5,column=1)
-                
+
+    # Creacion de boton
     def crearBoton(self,valor,escribir=True,ancho=9,alto=1):
         return Button(self.ventana,text=valor,width=ancho,height=alto,font=('Arial',15),command=lambda:self.click(valor,escribir))
-        
+    
+    # Accion de click
     def click(self,texto,escribir):
         if not escribir:
             if texto == '=' and self.operacion!='':
@@ -66,12 +67,14 @@ class Interfaz:
             self.mostrarEnPantalla(texto)     
         return
     
+    # Limpieza de pantalla
     def limpiarPantalla(self):
         self.pantalla.configure(state='normal')
         self.pantalla.delete('1.0',END)
         self.pantalla.configure(state='disabled')
         return
     
+    # Mostrar pantalla
     def mostrarEnPantalla(self, valor):
         self.pantalla.configure(state='normal')
         self.pantalla.insert(END,valor)
